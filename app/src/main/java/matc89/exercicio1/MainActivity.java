@@ -28,14 +28,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 texto = editText.getText().toString();
-                textView.setText("Alô," + " " + texto + "!" );
+                textView.setText("Alô," + " " + texto + "!");
             }
         });
     }
 
     protected void onSaveInstanceState(Bundle state){
         super.onSaveInstanceState(state);
-        state.putString("texto", texto.toString());
+        state.putString("texto", texto);
 
     }
 
