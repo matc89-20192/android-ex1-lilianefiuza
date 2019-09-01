@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private EditText editText;
     private Button botao;
+    String texto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +27,15 @@ public class MainActivity extends AppCompatActivity {
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("Alô," + " " + editText.getText().toString() + "!");
+                texto = editText.getText().toString();
+                textView.setText("Alô," + " " + texto + "!");
             }
         });
     }
 
     protected void onSaveInstanceState(Bundle state){
         super.onSaveInstanceState(state);
-        state.putString("texto", editText.getText().toString());
+        state.putString("texto", texto.toString());
 
     }
 
